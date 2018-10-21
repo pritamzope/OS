@@ -7,3 +7,5 @@ Kernel contains C programs and little bit assembly programs.
 
 OS Calculator contains an x86 calculator program capable to run on booting.
 
+
+Reference : http://createyourownos.blogspot.com/
