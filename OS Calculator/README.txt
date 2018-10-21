@@ -5,9 +5,16 @@ I am using Nasm and Qemu simulator.
 
 For Linux, type following commands to install nasm & qemu(Quick Emulator)
 
+For Debian based,
+
 	sudo apt-get install nasm
 	sudo apt-get install qemu qemu-system-x86_64
 
+For RHEL based,
+
+	sudo yum install nasm
+	sudo yum install qemu qemu-system-x86_64
+	
 	
 For Windows,download them from following sites and install them.
 
