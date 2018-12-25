@@ -2,8 +2,7 @@ Requirements :-
 
 GNU/Linux :-  Any distribution .
 Assembler :-  GNU Assembler(gas)
-GCC :-  GNU Compiler Collection a cross compiler. A newer version of GCC. I am using 7.2.0 version of GCC. 
-	The most important thing. If you use old version you may face multiboot header not found error.
+GCC :-  GNU Compiler Collection a cross compiler. I'm using gcc 4, 5, 6, 7, 8 versions
 Xorriso :-  A package that creates, loads, manipulates ISO 9660 filesystem images.(man xorriso)
 grub-mkrescue :-  Make a GRUB rescue image, this package internally calls the xorriso functionality to build an iso image.
 QEMU :-  Quick EMUlator to boot our kernel in virtual machine without rebooting the main system.
