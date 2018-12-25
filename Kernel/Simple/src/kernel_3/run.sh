@@ -1,11 +1,11 @@
 #assemble boot.s file
-as boot.s -o boot.o
+as --32 boot.s -o boot.o
 
 #compile kernel.c file
-gcc -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+gcc -m32 -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #linking the kernel with kernel.o and boot.o files
-gcc -T linker.ld -o MyOS.bin -ffreestanding -O2 -nostdlib kernel.o boot.o -lgcc
+ld -m elf_i386 -T linker.ld kernel.o boot.o -o MyOS.bin -nostdlib
 
 #check MyOS.bin file is x86 multiboot file or not
 grub-file --is-x86-multiboot MyOS.bin
