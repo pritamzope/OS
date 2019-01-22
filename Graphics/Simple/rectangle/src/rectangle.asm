@@ -1,5 +1,3 @@
-;****Graphics Pixel drawing algorithm****
-
 ;******************************************
 ; botloader code begin
 
