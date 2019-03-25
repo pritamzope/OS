@@ -2,6 +2,6 @@
 
 <b>color_change.asm : </b> Background colors changes as any key is pressed.
 
-<b>rotate_text.asm : </b> Rotate the text to the right position by incrementing VGA index as any key is pressed.
+<b>rotate_text.asm : </b> Rotate the text to the right position with changing fore and back color by incrementing VGA index as any key is pressed.
 
 
