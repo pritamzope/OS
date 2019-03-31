@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/Kernel/Keyboard/keyboard_demo.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/Kernel/Keyboard/keyboard_demo.png" width="600" height="220"/>
 
 
 
