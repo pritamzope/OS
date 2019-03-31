@@ -1,14 +1,14 @@
 Requirements :-
 
-GNU/Linux :-  Any distribution .
-Assembler :-  GNU Assembler(gas)
-GCC :-  GNU Compiler Collection a cross compiler. I'm using gcc 4, 5, 6, 7, 8 versions
-Xorriso :-  A package that creates, loads, manipulates ISO 9660 filesystem images.(man xorriso)
-grub-mkrescue :-  Make a GRUB rescue image, this package internally calls the xorriso functionality to build an iso image.
-QEMU :-  Quick EMUlator to boot our kernel in virtual machine without rebooting the main system.
+GNU/Linux :-  Any distribution<br/>
+Assembler :-  GNU Assembler(gas)<br/>
+GCC :-  GNU Compiler Collection a cross compiler. I'm using gcc 4, 5, 6, 7, 8 versions<br/>
+Xorriso :-  A package that creates, loads, manipulates ISO 9660 filesystem images.(man xorriso)<br/>
+grub-mkrescue :-  Make a GRUB rescue image, this package internally calls the xorriso functionality to build an iso image.<br/>
+QEMU :-  Quick EMUlator to boot our kernel in virtual machine without rebooting the main system.<br/>
 
 
-Usage :-
+Usage :-<br/>
 
 Run the script(run.sh)
 
@@ -22,14 +22,14 @@ or
 
 To Run kernel in VirtualBox :
 
-Click on <b>New</b>
-Enter <b>Name</b>, <b>Type: Other</b>, <b>Version: Other/Unknown</b>
-Memory size : keep it as it is
-Click next until <b>File location and size</b> dialog, select <b>64.00 MB</b> size
-Click create
-Goto <b>Settings -> System -> Acceleration</b> and disable Enable VT-x/AMD-V or any other graphics card support
-Goto <b>Settings -> Storage</b> select ISO image of kernel.
-Click OK and Start machine
+Click on <b>New</b><br/>
+Enter <b>Name</b>, <b>Type: Other</b>, <b>Version: Other/Unknown</b><br/>
+Memory size : keep it as it is<br/>
+Click next until <b>File location and size</b> dialog, select <b>64.00 MB</b> size<br/>
+Click create<br/>
+Goto <b>Settings -> System -> Acceleration</b> and disable Enable VT-x/AMD-V or any other graphics card support<br/>
+Goto <b>Settings -> Storage</b> select ISO image of kernel.<br/>
+Click OK and Start machine<br/>
 
 
 
