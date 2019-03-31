@@ -77,9 +77,8 @@ void print_string(char *str)
 {
   uint32 index = 0;
   while(str[index]){
-    vga_buffer[vga_index] = vga_entry(str[index], g_fore_color, g_back_color);
+    print_char(str[index]);
     index++;
-    vga_index++;
   }
 }
 
@@ -144,7 +143,7 @@ void test_input()
       ch = get_ascii_char(keycode);
       print_char(ch);
     }
-    sleep(0x04FFFFFF);
+    sleep(0x02FFFFFF);
   }while(ch > 0);
 }
 
