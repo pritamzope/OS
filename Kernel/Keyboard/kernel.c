@@ -137,7 +137,7 @@ void test_input()
   char keycode = 0;
   do{
     keycode = get_input_keycode();
-    if(keycode == 0x1C){
+    if(keycode == KEY_ENTER){
       print_new_line();
     }else{
       ch = get_ascii_char(keycode);
