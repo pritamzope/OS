@@ -13,6 +13,26 @@ Usage :-
 Run the script(run.sh)
 
 	sh run.sh
+	
+or
+
+	chmod +x run.sh
+	./run.sh
+	
+
+To Run kernel in VirtualBox :
+
+Click on <b>New</b>
+Enter <b>Name</b>, <b>Type: Other</b>, <b>Version: Other/Unknown</b>
+Memory size : keep it as it is
+Click next until <b>File location and size</b> dialog, select <b>64.00 MB</b> size
+Click create
+Goto <b>Settings -> System -> Acceleration</b> and disable Enable VT-x/AMD-V or any other graphics card support
+Goto <b>Settings -> Storage</b> select ISO image of kernel.
+Click OK and Start machine
+
+
+
 
 References :-
 
