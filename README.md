@@ -3,7 +3,7 @@ Simple Operating System programs starting from Bootloader in assembly to Kernel 
 
 Bootloader contains simple 16 bit as well as 32 bit OS bootloader assembly programs.
 
-Kernel contains C programs and little bit assembly programs for low level operations.
+Kernel contains C programs for Simple HelloWorld, Keyboard I/O etc... and little bit assembly programs for low level operations.
 
 OS Calculator contains an x86 calculator program capable to run on booting.
 
