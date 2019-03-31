@@ -22,14 +22,14 @@ or
 
 To Run kernel in VirtualBox :
 
-Click on <b>New</b><br/>
-Enter <b>Name</b>, <b>Type: Other</b>, <b>Version: Other/Unknown</b><br/>
-Memory size : keep it as it is<br/>
-Click next until <b>File location and size</b> dialog, select <b>64.00 MB</b> size<br/>
-Click create<br/>
-Goto <b>Settings -> System -> Acceleration</b> and disable Enable VT-x/AMD-V or any other graphics card support<br/>
-Goto <b>Settings -> Storage</b> select ISO image of kernel.<br/>
-Click OK and Start machine<br/>
+1) Click on <b>New</b><br/>
+2) Enter <b>Name</b>, <b>Type: Other</b>, <b>Version: Other/Unknown</b><br/>
+3) Memory size : keep it as it is<br/>
+4) Click next until <b>File location and size</b> dialog, select <b>64.00 MB</b> size<br/>
+5) Click create<br/>
+6) Goto <b>Settings -> System -> Acceleration</b> and disable Enable VT-x/AMD-V or any other graphics card support<br/>
+7) Goto <b>Settings -> Storage</b> select ISO image of kernel.<br/>
+8) Click OK and Start machine<br/>
 
 
 
