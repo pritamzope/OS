@@ -5,6 +5,8 @@ Bootloader contains simple 16 bit as well as 32 bit OS bootloader assembly progr
 
 Kernel contains C programs for Simple HelloWorld, Keyboard I/O etc... and little bit assembly programs for low level operations.
 
+GUI contains graphics related programs in C for drawing boxes, DOSBox GUI etc. 
+
 OS Calculator contains an x86 calculator program capable to run on booting.
 
 Graphics contains simple low level pixels drawing, as well as objects such as Lines using DDA algorithm, Rectangles etc.
