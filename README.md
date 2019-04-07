@@ -11,5 +11,6 @@ OS Calculator contains an x86 calculator program capable to run on booting.
 
 Graphics contains simple low level pixels drawing, as well as objects such as Lines using DDA algorithm, Rectangles etc.
 
+Tic-Tac-Toe a simple tic-tac-toe DOS game with boxes.
 
 Reference : http://createyourownos.blogspot.com/
