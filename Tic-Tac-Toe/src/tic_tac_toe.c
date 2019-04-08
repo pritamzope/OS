@@ -143,7 +143,7 @@ void draw_game_board()
   print_color_string(" to select cell", GREY, BLACK);
 
   if(error == TRUE){
-    gotoxy(1, 18);
+    gotoxy(1, 20);
     print_color_string("Cell is already selected", RED, BLACK);
     error = FALSE;
   }
