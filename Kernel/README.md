@@ -2,7 +2,7 @@ Requirements :-
 
 GNU/Linux :-  Any distribution<br/>
 Assembler :-  GNU Assembler(gas)<br/>
-GCC :-  GNU Compiler Collection a cross compiler. I'm using gcc 4, 5, 6, 7, 8 versions<br/>
+GCC :-  GNU Compiler Collection, C compiler. I'm using gcc 4, 5, 6, 7, 8 versions<br/>
 Xorriso :-  A package that creates, loads, manipulates ISO 9660 filesystem images.(man xorriso)<br/>
 grub-mkrescue :-  Make a GRUB rescue image, this package internally calls the xorriso functionality to build an iso image.<br/>
 QEMU :-  Quick EMUlator to boot our kernel in virtual machine without rebooting the main system.<br/>
