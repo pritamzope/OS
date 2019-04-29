@@ -1,6 +1,5 @@
 #include "kernel.h"
 
-
 //index for video buffer array
 uint32 vga_index;
 //counter to store new lines
@@ -243,9 +242,9 @@ void print_ebx(uint32 ebx)
 void print_edx(uint32 edx)
 {
   print_string("\nEDX :-");
-  print_string("\n\tbit-0 [ ");
+  print_string("\n\tbit-31 [ ");
   print_binary(edx);
-  print_string(" ] bit-31");
+  print_string(" ] bit-0");
   print_string("\n\tBit 0 : FPU-x87 FPU on Chip");
   print_string("\n\tBit 1 : VME-Virtual-8086 Mode Enhancement");
   print_string("\n\tBit 2 : DE-Debugging Extensions");
