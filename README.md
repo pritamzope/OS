@@ -13,4 +13,5 @@ Graphics contains simple low level pixels drawing, as well as objects such as Li
 
 Tic-Tac-Toe a simple tic-tac-toe DOS game with boxes.
 
-Reference : http://createyourownos.blogspot.com/
+First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
+
