@@ -7,6 +7,8 @@ Kernel contains C programs for Simple HelloWorld, Keyboard I/O etc... and little
 
 Global_Descriptor_Table contains code that sets up GDT in both x86 NASM Assembly and in C.
 
+Interrupt_Descriptor_Table contains code that sets up IDT in C with interrupt service routines.
+
 GUI contains graphics related programs in C for drawing boxes, DOSBox GUI etc. 
 
 OS Calculator contains an x86 calculator program capable to run on booting.
