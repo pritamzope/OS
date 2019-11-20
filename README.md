@@ -15,6 +15,8 @@ OS Calculator contains an x86 calculator program capable to run on booting.
 
 Graphics contains simple low level pixels drawing, as well as objects such as Lines using DDA algorithm, Rectangles etc.
 
+VGA contains C kernel and assembly program for seeting up Video Graphics Array(VGA) and drawing some basic shapes by ploting pixels.
+
 Tic-Tac-Toe a simple tic-tac-toe DOS game with boxes.
 
 First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
