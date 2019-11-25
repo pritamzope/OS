@@ -11,7 +11,7 @@ Interrupt_Descriptor_Table contains code that sets up IDT in C with interrupt se
 
 GUI contains graphics related programs in C for drawing boxes, DOSBox GUI etc. 
 
-OS Calculator contains an x86 calculator program capable to run on booting.
+x86 Calculator contains an x86 calculator program capable to run on booting.
 
 Graphics contains simple low level pixels drawing, as well as objects such as Lines using DDA algorithm, Rectangles etc.
 
