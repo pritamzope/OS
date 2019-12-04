@@ -1,3 +1,5 @@
+<a href="https://www.youtube.com/watch?v=puaoE5bx7-Q&t=3s">Operating System - Setting up Global Descriptor Table(GDT)</a>
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/SegmentDescriptor.svg"/>
 
 References:
