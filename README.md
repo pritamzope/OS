@@ -19,5 +19,7 @@ VGA contains C kernel and assembly program for seeting up Video Graphics Array(V
 
 Tic-Tac-Toe a simple tic-tac-toe DOS game with boxes.
 
+Pong-Game a simple Pong game using graphics.
+
 First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
 
