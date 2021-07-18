@@ -20,7 +20,7 @@ grub-file --is-x86-multiboot x86_calculator.bin
 mkdir -p isodir/boot/grub
 cp x86_calculator.bin isodir/boot/x86_calculator.bin
 cp grub.cfg isodir/boot/grub/grub.cfg
-grub-mkrescue -o x86_Calculator.iso isodir
+grub-mkrescue -o x86_calculator.iso isodir
 
 # run it in qemu
-qemu-system-x86_64 -cdrom x86_Calculator.iso
+qemu-system-x86_64 -cdrom x86_calculator.iso
