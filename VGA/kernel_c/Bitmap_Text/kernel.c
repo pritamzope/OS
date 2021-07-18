@@ -20,7 +20,7 @@ void kernel_entry()
 {
   init_vga();
 
-  draw_string(0, 0, WHITE, "HELLO WORLD");
+  draw_string(50, 50, WHITE, "HELLO WORLD");
 }
 
 

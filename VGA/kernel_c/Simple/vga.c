@@ -1,6 +1,9 @@
 #include "vga.h"
 #include "kernel.h"
 
+// a global VGA buffer
+static uint8* g_vga_buffer;
+
 /*
 See Intel® OpenSource HD Graphics PRM pdf file
 for following defined data for each vga register
@@ -75,13 +78,13 @@ void set_ac()
 void clear_screen()
 {
   for(uint32 index = 0; index < VGA_MAX; index++)
-    vga_buffer[index] = 0;
+    g_vga_buffer[index] = 0;
 }
 
 void clear_color(uint8 color)
 {
   for(uint32 index = 0; index < VGA_MAX; index++)
-    vga_buffer[index] = color;
+    g_vga_buffer[index] = color;
 }
 
 void init_vga()
@@ -92,7 +95,7 @@ void init_vga()
   set_gc();
   set_ac();
 
-  vga_buffer = (uint8*)VGA_ADDRESS;
+  g_vga_buffer = (uint8*)VGA_ADDRESS;
 
   clear_screen();
 }
@@ -102,7 +105,7 @@ void putpixel(uint16 x, uint16 y, uint8 color)
   uint32 index = 0;
   index = 320 * y + x;
   if(index < VGA_MAX)
-    vga_buffer[index] = color;
+    g_vga_buffer[index] = color;
 }
 
 void draw_line(uint16 x1, uint16 y1, uint16 x2, uint16 y2, uint8 color)

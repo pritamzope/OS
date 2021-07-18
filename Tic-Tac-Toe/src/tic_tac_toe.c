@@ -288,7 +288,7 @@ void launch_game()
       return;
     
     //change sleep value if game is working so fast or slow
-    sleep(0x02FFFFFF);
+    sleep(0x04FFFFFF);
   }while(keycode > 0);
 }
 

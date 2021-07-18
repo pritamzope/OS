@@ -8,8 +8,6 @@
 #define VGA_MAX_WIDTH 320
 #define VGA_MAX_HEIGHT 200
 
-uint8* vga_buffer;
-
 enum vga_color {
   BLACK,
   BLUE,
@@ -34,9 +32,7 @@ enum vga_color {
 #define	VGA_AC_READ 0x3C1
 #define	VGA_AC_WRITE 0x3C0
 
-/*
-Miscellaneous Output
-*/
+/* Miscellaneous Output */
 #define	VGA_MISC_READ 0x3CC
 #define	VGA_MISC_WRITE 0x3C2
 
