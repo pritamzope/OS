@@ -37,4 +37,3 @@ _start:
     call kmain
 loop:
     jmp loop
-

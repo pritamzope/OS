@@ -29,15 +29,16 @@ CC_FLAGS = $(INCLUDE) $(DEFINES) -m32 -std=gnu99 -ffreestanding -Wall -Wextra
 LD_FLAGS = -m elf_i386 -T $(CONFIG)/linker.ld -nostdlib
 
 # target file to create in linking
-TARGET=$(OUT)/Console.bin
+TARGET=$(OUT)/GDT.bin
 
 # iso file target to create
-TARGET_ISO=$(OUT)/Console.iso
+TARGET_ISO=$(OUT)/GDT.iso
 ISO_DIR=$(OUT)/isodir
 
-OBJECTS=$(ASM_OBJ)/entry.o\
+OBJECTS=$(ASM_OBJ)/entry.o $(ASM_OBJ)/load_gdt.o\
 		$(OBJ)/io_ports.o $(OBJ)/vga.o\
 		$(OBJ)/string.o $(OBJ)/console.o\
+		$(OBJ)/gdt.o\
 		$(OBJ)/kernel.o
 
 
@@ -58,6 +59,11 @@ $(ASM_OBJ)/entry.o : $(ASM_SRC)/entry.asm
 	$(ASM) $(ASM_FLAGS) $(ASM_SRC)/entry.asm -o $(ASM_OBJ)/entry.o
 	@printf "\n"
 
+$(ASM_OBJ)/load_gdt.o : $(ASM_SRC)/load_gdt.asm
+	@printf "[ $(ASM_SRC)/load_gdt.asm ]\n"
+	$(ASM) $(ASM_FLAGS) $(ASM_SRC)/load_gdt.asm -o $(ASM_OBJ)/load_gdt.o
+	@printf "\n"
+
 $(OBJ)/io_ports.o : $(SRC)/io_ports.c
 	@printf "[ $(SRC)/io_ports.c ]\n"
 	$(CC) $(CC_FLAGS) -c $(SRC)/io_ports.c -o $(OBJ)/io_ports.o
@@ -76,6 +82,11 @@ $(OBJ)/string.o : $(SRC)/string.c
 $(OBJ)/console.o : $(SRC)/console.c
 	@printf "[ $(SRC)/console.c ]\n"
 	$(CC) $(CC_FLAGS) -c $(SRC)/console.c -o $(OBJ)/console.o
+	@printf "\n"
+
+$(OBJ)/gdt.o : $(SRC)/gdt.c
+	@printf "[ $(SRC)/gdt.c ]\n"
+	$(CC) $(CC_FLAGS) -c $(SRC)/gdt.c -o $(OBJ)/gdt.o
 	@printf "\n"
 
 $(OBJ)/kernel.o : $(SRC)/kernel.c

@@ -1,6 +1,7 @@
 #include "kernel.h"
 #include "console.h"
 #include "string.h"
+#include "gdt.h"
 
 void display_sections() {
     printf("kernel-start: 0x%x, kernel-end: 0x%x, TOTAL: %d bytes\n", &__kernel_section_start, &__kernel_section_end, 
@@ -20,6 +21,7 @@ void display_sections() {
 }
 
 void kmain() {
+    gdt_init();
     console_init(COLOR_WHITE, COLOR_BLACK);
     display_sections();
 }

@@ -46,3 +46,4 @@ SECTIONS
     end = .; _end = .; __end = .;
     __kernel_section_end = .;
 }
+

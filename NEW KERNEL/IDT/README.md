@@ -14,25 +14,25 @@
 
 **Compile the source:**
 ```
-	$ cd OS/NEW\ KERNEL/Console
+	$ cd OS/NEW\ KERNEL/IDT
 	$ make
 ```
 
 **Open created ISO in QEMU:**
 ```
-	$ qemu-system-x86_64 out/Console.iso
+	$ qemu-system-x86_64 out/IDT.iso
 ```
 or
 ```
-	$ qemu-system-i386 out/Console.iso
+	$ qemu-system-i386 out/IDT.iso
 ```
 **Clean the code:**
 ```
-	$ cd OS/NEW\ KERNEL/Console
+	$ cd OS/NEW\ KERNEL/IDT
 	$ make clean
 ```
 
 <br/>
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/Console/kernel_console.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/IDT/kernel_idt.png"/>
 
