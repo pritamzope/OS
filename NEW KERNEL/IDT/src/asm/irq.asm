@@ -1,22 +1,5 @@
 section .text
     extern isr_irq_handler
-    global irq_0
-    global irq_1
-    global irq_2
-    global irq_3
-    global irq_4
-    global irq_5
-    global irq_6
-    global irq_7
-    global irq_8
-    global irq_9
-    global irq_10
-    global irq_11
-    global irq_12
-    global irq_13
-    global irq_14
-    global irq_15
-
 
 irq_handler:
     pusha                 ; push all registers
@@ -46,101 +29,30 @@ irq_handler:
     iret
 
 
-
-irq_0:
+%macro ADD_IRQ 2
+  global isr_%1
+  irq_%1:
     cli
-    push byte 0         ; store default err code(0)
-    push byte 32        ; push irq number index in IDT
+    push 0
+    push %2
     jmp irq_handler
+%endmacro
 
-irq_1:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 33        ; push irq number index in IDT
-    jmp irq_handler
 
-irq_2:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 34        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_3:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 35        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_4:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 36        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_5:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 37        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_6:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 38        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_7:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 39        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_8:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 40        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_9:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 41        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_10:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 42        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_11:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 43        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_12:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 44        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_13:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 45        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_14:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 46        ; push irq number index in IDT
-    jmp irq_handler
-
-irq_15:
-    cli
-    push byte 0         ; store default err code(0)
-    push byte 47        ; push irq number index in IDT
-    jmp irq_handler
-
+ADD_IRQ 0, 32
+ADD_IRQ 1, 33
+ADD_IRQ 2, 34
+ADD_IRQ 3, 35
+ADD_IRQ 4, 36
+ADD_IRQ 5, 37
+ADD_IRQ 6, 38
+ADD_IRQ 7, 39
+ADD_IRQ 8, 40
+ADD_IRQ 9, 41
+ADD_IRQ 10, 42
+ADD_IRQ 11, 43
+ADD_IRQ 12, 45
+ADD_IRQ 13, 46
+ADD_IRQ 14, 47
+ADD_IRQ 15, 48
 
