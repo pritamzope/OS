@@ -26,7 +26,7 @@ First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
 
 # NEW KERNEL
 
-A new modified source code for a console has been added to "NEW KERNEL" directory.
+A new modified source code has been added to "NEW KERNEL" directory.
 Compilation scripts are replaced with Makefile.
 Assembly code is replaced with NASM assembly rathen than GNU AS.
 
