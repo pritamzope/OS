@@ -30,7 +30,7 @@ irq_handler:
 
 
 %macro ADD_IRQ 2
-  global isr_%1
+  global irq_%1
   irq_%1:
     cli
     push 0
