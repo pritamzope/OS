@@ -22,11 +22,11 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 
 ## Order
 
-1] Console
-2] GDT
-3] IDT
-4] Keyboard
-5] Terminal
-6] Mouse
+1] Console<br/>
+2] GDT<br/>
+3] IDT<br/>
+4] Keyboard<br/>
+5] Terminal<br/>
+6] Mouse<br/>
 
 
