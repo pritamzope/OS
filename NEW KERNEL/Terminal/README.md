@@ -34,5 +34,5 @@ or
 
 <br/>
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/IDT/kernel_terminal.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/Terminal/kernel_terminal.png"/>
 
