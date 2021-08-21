@@ -51,6 +51,13 @@ void isr_register_interrupt_handler(int num, ISR handler) {
         g_interrupt_handlers[num] = handler;
 }
 
+/*
+ * turn off current interrupt
+*/
+void isr_end_interrupt(int num) {
+    pic8259_eoi(num);
+}
+
 /**
  * invoke isr routine and send eoi to pic,
  * being called in irq.asm
@@ -87,3 +94,4 @@ void isr_exception_handler(REGISTERS reg) {
         handler(&reg);
     }
 }
+

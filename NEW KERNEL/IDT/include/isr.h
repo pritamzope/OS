@@ -24,6 +24,11 @@ typedef void (*ISR)(REGISTERS *);
  */
 void isr_register_interrupt_handler(int num, ISR handler);
 
+/*
+ * turn off current interrupt
+*/
+void isr_end_interrupt(int num);
+
 /**
  * invoke exception routine,
  * being called in exception.asm
@@ -111,4 +116,5 @@ extern void irq_15();
 
 
 #endif
+
 
