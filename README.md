@@ -28,5 +28,6 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 4] Keyboard<br/>
 5] Terminal<br/>
 6] Mouse<br/>
+7] Memory Info<br/>
 
 
