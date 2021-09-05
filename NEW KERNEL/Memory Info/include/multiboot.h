@@ -3,9 +3,36 @@
 
 #include "types.h"
 
-#define MULTIBOOT_MAGIC_HEADER 0x1BADB002
+#define MULTIBOOT_MAGIC_HEADER      0x1BADB002
 #define MULTIBOOT_BOOTLOADER_MAGIC  0x2BADB002
 
+/* The Multiboot header. */
+typedef struct {
+    uint32 magic;
+    uint32 flags;
+    uint32 checksum;
+    uint32 header_addr;
+    uint32 load_addr;
+    uint32 load_end_addr;
+    uint32 bss_end_addr;
+    uint32 entry_addr;
+} MULTIBOOT_HEADER;
+
+/* The symbol table for a.out. */
+typedef struct {
+    uint32 tabsize;
+    uint32 strsize;
+    uint32 addr;
+    uint32 reserved;
+} AOUT_SYMBOL_TABLE;
+
+/* The section header table for ELF. */
+typedef struct {
+    uint32 num;
+    uint32 size;
+    uint32 addr;
+    uint32 shndx;
+} ELF_SECTION_HEADER_TABLE;
 
 typedef struct {
     /* required, defined in entry.asm */
@@ -26,9 +53,10 @@ typedef struct {
     uint32 modules_addr;
 
     /* symbol table info, present if flags[4] & flags[5] is set(SYMT in entry.asm) */
-    uint32 symt0;
-    uint32 symt1;
-    uint32 symt2;
+    union {
+        AOUT_SYMBOL_TABLE aout_sym;
+        ELF_SECTION_HEADER_TABLE elf_sec;
+    } u;
 
     /* memory mapping, present if flags[6] is set(MEMMAP in entry.asm) */
     uint32 mmap_length;
@@ -64,5 +92,23 @@ typedef struct {
     uint8 framebuffer_type;  // indexed = 0, RGB = 1, EGA = 2
 
 } MULTIBOOT_INFO;
+
+
+typedef enum {
+    MULTIBOOT_MEMORY_AVAILABLE = 1,
+    MULTIBOOT_MEMORY_RESERVED,
+    MULTIBOOT_MEMORY_ACPI_RECLAIMABLE,
+    MULTIBOOT_MEMORY_NVS,
+    MULTIBOOT_MEMORY_BADRAM
+} MULTIBOOT_MEMORY_TYPE;
+
+typedef struct {
+    uint32 size;
+    uint32 addr_low;
+    uint32 addr_high;
+    uint32 len_low;
+    uint32 len_high;
+    MULTIBOOT_MEMORY_TYPE type;
+} MULTIBOOT_MEMORY_MAP;
 
 #endif

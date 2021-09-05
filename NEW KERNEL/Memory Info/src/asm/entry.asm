@@ -1,5 +1,5 @@
 ; constants for multiboot header
-MEMINFO     equ  1
+MEMINFO     equ  1<<0
 BOOTDEVICE  equ  1<<1
 CMDLINE     equ  1<<2
 MODULECOUNT equ  1<<3
