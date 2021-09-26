@@ -14,6 +14,23 @@ Pong-Game a simple Pong game using graphics.
 First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
 
 
+# Requirements :-
+
+(install following packages using apt-get)<br/>
+1) GNU/Linux :-  Any distribution<br/>
+2) make :- make utility<br/>
+3) Assembler :-  NASM Assembler(nasm)<br/>
+4) GCC :-  GNU Compiler Collection, C compiler<br/>
+5) xorriso :-  A package that creates, loads, manipulates ISO 9660 filesystem images.(man xorriso)<br/>
+6) grub-mkrescue :- utility to make ISO image<br/>
+7) QEMU :-  Quick EMUlator to boot our kernel<br/>
+
+
+```
+	$ sudo apt-get install make nasm gcc xorriso qemu qemu-system-x86 qemu-system-i386
+```
+
+
 # NEW KERNEL
 
 A new modified source code has been added to "NEW KERNEL" directory.
@@ -29,5 +46,4 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 5] Terminal<br/>
 6] Mouse<br/>
 7] Memory Info<br/>
-
-
+8] Physical Memory Manager
