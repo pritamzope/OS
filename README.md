@@ -44,6 +44,9 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 3] IDT<br/>
 4] Keyboard<br/>
 5] Terminal<br/>
-6] Mouse<br/>
-7] Memory Info<br/>
-8] Physical Memory Manager
+6] Timer<br/>
+7] Mouse<br/>
+8] Memory Info<br/>
+9] Physical Memory Manager<br/>
+
+
