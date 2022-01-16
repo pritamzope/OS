@@ -24,7 +24,7 @@ Install following packages using apt-get<br/>
 
 **Clean the code:**
 ```
-	$ cd OS/NEW\ KERNEL/IDT
+	$ cd OS/NEW\ KERNEL/ATA
 	$ make clean
 ```
 
