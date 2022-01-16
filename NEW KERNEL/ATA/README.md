@@ -81,8 +81,7 @@ Install following packages using apt-get<br/>
 <br/>
 
 
-<br/>
-## Checking HDD contents in GHex :-<br/>
+## Checking VHD contents in GHex :-<br/>
 
 Install GHex by following command:
 ```
