@@ -28,7 +28,7 @@ Install following packages using apt-get<br/>
 	$ make clean
 ```
 
-<br/>
+
 ## Running in Virtual Box :-<br/>
 
 **Install Virtual Box:**
