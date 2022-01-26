@@ -12,6 +12,7 @@ int memcmp(uint8 *s1, uint8 *s2, uint32 n);
 int strlen(const char *s);
 
 int strcmp(const char *s1, char *s2);
+int strncmp(const char *s1, const char *s2, int c);
 
 int strcpy(char *dst, const char *src);
 
@@ -25,4 +26,7 @@ char lower(char c);
 
 void itoa(char *buf, int base, int d);
 
+char *strstr(const char *in, const char *str);
+
 #endif
+

@@ -44,6 +44,19 @@ int strcmp(const char *s1, char *s2) {
     return 1;
 }
 
+int strncmp(const char *s1, const char *s2, int c) {
+    int result = 0;
+
+    while (c) {
+        result = *s1 - *s2++;
+        if ((result != 0) || (*s1++ == 0)) {
+            break;
+        }
+        c--;
+    }
+    return result;
+}
+
 int strcpy(char *dst, const char *src) {
     int i = 0;
     while ((*dst++ = *src++) != 0)
@@ -112,3 +125,25 @@ void itoa(char *buf, int base, int d) {
         p2--;
     }
 }
+
+char *strstr(const char *in, const char *str) {
+    char c;
+    uint32 len;
+
+    c = *str++;
+    if (!c)
+        return (char *)in;
+
+    len = strlen(str);
+    do {
+        char sc;
+        do {
+            sc = *in++;
+            if (!sc)
+                return (char *)0;
+        } while (sc != c);
+    } while (strncmp(in, str, len) != 0);
+
+    return (char *)(in - 1);
+}
+
