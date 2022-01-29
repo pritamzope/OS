@@ -25,7 +25,7 @@ First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
 
 
 ```
-   $ sudo apt-get install make nasm gcc xorriso qemu qemu-system-x86 qemu-system-i386 virtualbox
+$ sudo apt-get install make nasm gcc xorriso qemu qemu-system-x86 qemu-system-i386 virtualbox
 ```
 
 
@@ -44,7 +44,8 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 5] Terminal<br/>
 6] Timer<br/>
 7] Mouse<br/>
-8] Memory Info<br/>
-9] Physical Memory Manager<br/>
-10] ATA read/write<br/>
+8] FPU<br/>
+9] Memory Info<br/>
+10] Physical Memory Manager<br/>
+11] ATA read/write<br/>
 
