@@ -1,9 +1,6 @@
-NOTE: Bitmap memory allocator works only on small memory size
-      If want to make it work for large memory, make sure to increse BLOCK size(2^n)
-      Here i'm using only one memory manager using bitmap allocation which is extremely slow.
-      we will add other types such as Linked allocation or Buddy system...
-      
-      Make sure you pass memory to qemu using -m option
+Make sure you pass memory to qemu using -m option
+At least minimum 4 MB memory is required
+
 
 ## Usage :-<br/>
 

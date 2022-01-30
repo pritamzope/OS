@@ -6,25 +6,10 @@
 typedef uint32 PMM_PHYSICAL_ADDRESS;
 
 /*
-NOTE: Bitmap memory allocator works only on small memory size
-      If want to make it work for large memory, make sure to increse BLOCK size(2^n)
-      Here i'm using only one memory manager using bitmap allocation which is extremely slow.
-      we will add other types such as Linked allocation or Buddy system...
-      
-      Make sure you pass memory to qemu using -m option
+ Make sure you pass memory to qemu using -m option
 */
 
-// 4K works for memory <= 64MB
 #define PMM_BLOCK_SIZE    4096
-
-// 8K works for memory <= 128MB, default memory used for qemu
-//#define PMM_BLOCK_SIZE    8192
-
-// 16K works for memory <= 256MB
-//#define PMM_BLOCK_SIZE    16384
-
-// 1MB works for memory >= 512MB, but it's better to use buddy system here
-//#define PMM_BLOCK_SIZE    1048576
 
 
 typedef struct {

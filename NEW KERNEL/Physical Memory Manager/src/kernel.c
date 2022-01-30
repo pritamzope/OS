@@ -40,8 +40,8 @@ int get_kernel_memory_map(KERNEL_MEMORY_MAP *kmap, MULTIBOOT_INFO *mboot_info) {
         if (mmap->type != MULTIBOOT_MEMORY_AVAILABLE) continue;
         // make sure kernel is loaded at 0x100000 by bootloader(see linker.ld)
         if (mmap->addr_low == kmap->kernel.text_start_addr) {
-            // set available memory starting from end of our kernel, leaving 1024 bytes
-            kmap->available.start_addr = kmap->kernel.k_end_addr + 1024;
+            // set available memory starting from end of our kernel, leaving 1MB size for functions exceution
+            kmap->available.start_addr = kmap->kernel.k_end_addr + 1024 * 1024;
             kmap->available.end_addr = mmap->addr_low + mmap->len_low;
             // get availabel memory in bytes
             kmap->available.size = kmap->available.end_addr - kmap->available.start_addr;
@@ -87,7 +87,8 @@ void kmain(unsigned long magic, unsigned long addr) {
             return;
         }
         //display_kernel_memory_map(&g_kmap);
-        printf("total_memory: %d KB\n", g_kmap.system.total_memory);
+        printf("total_memory: %d KB, %d Bytes\n", g_kmap.system.total_memory, g_kmap.available.size);
+        printf("start_addr: 0x%x, end_addr: 0x%x\n", g_kmap.available.start_addr, g_kmap.available.end_addr);
 
         // put the memory bitmap at the start of the available memory
         pmm_init(g_kmap.available.start_addr, g_kmap.available.size);
