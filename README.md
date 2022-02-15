@@ -48,4 +48,5 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 9] Memory Info<br/>
 10] Physical Memory Manager<br/>
 11] ATA read/write<br/>
+12] BIOS 32<br/>
 
