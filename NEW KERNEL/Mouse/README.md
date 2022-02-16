@@ -32,3 +32,9 @@ or
 	$ make clean
 ```
 
+<br/>
+<br/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/Mouse/kernel_mouse_1.png"/>
+<br/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/Mouse/kernel_mouse_2.png"/>
+

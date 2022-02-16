@@ -14,6 +14,7 @@
 #include "types.h"
 
 int g_mouse_x_pos = 0, g_mouse_y_pos = 0;
+MOUSE_STATUS g_status;
 
 int mouse_getx() {
     return g_mouse_x_pos;
@@ -76,15 +77,28 @@ void get_mouse_status(char status_byte, MOUSE_STATUS *status) {
         status->y_overflow = 1;
 }
 
+void print_mouse_info() {
+    console_gotoxy(0, 0);
+    printf("Mouse Demo X: %d, Y: %d\n", g_mouse_x_pos, g_mouse_y_pos);
+    if (g_status.left_button) {
+        printf("Left button clicked");
+    }
+    if (g_status.right_button) {
+        printf("Right button clicked");
+    }
+    if (g_status.middle_button) {
+        printf("Middle button clicked");
+    }
+}
+
 void mouse_handler(REGISTERS *r) {
     static uint8 mouse_cycle = 0;
     static char mouse_byte[3];
-    MOUSE_STATUS status;
 
     switch (mouse_cycle) {
         case 0:
             mouse_byte[0] = mouse_read();
-            get_mouse_status(mouse_byte[0], &status);
+            get_mouse_status(mouse_byte[0], &g_status);
             mouse_cycle++;
             break;
         case 1:
@@ -93,32 +107,26 @@ void mouse_handler(REGISTERS *r) {
             break;
         case 2:
             mouse_byte[2] = mouse_read();
-            if (mouse_byte[1] == 0 && mouse_byte[2] == 0)
-                break;
-
-            if(status.x_sign)
-                g_mouse_x_pos = g_mouse_x_pos + mouse_byte[1];
-            else
-                g_mouse_x_pos = g_mouse_x_pos + mouse_byte[1];
-    
+            g_mouse_x_pos = g_mouse_x_pos + mouse_byte[1];
             g_mouse_y_pos = g_mouse_y_pos - mouse_byte[2];
 
             if (g_mouse_x_pos < 0)
                 g_mouse_x_pos = 0;
             if (g_mouse_y_pos < 0)
                 g_mouse_y_pos = 0;
-            if (g_mouse_x_pos > (VGA_WIDTH * VGA_HEIGHT))
-                g_mouse_x_pos = (VGA_WIDTH * VGA_HEIGHT) - 1;
+            if (g_mouse_x_pos > VGA_WIDTH)
+                g_mouse_x_pos = VGA_WIDTH - 1;
             if (g_mouse_y_pos > VGA_HEIGHT)
                 g_mouse_y_pos = VGA_HEIGHT - 1;
 
+            console_clear(COLOR_WHITE, COLOR_BLACK);
+            console_gotoxy(g_mouse_x_pos, g_mouse_y_pos);
+            console_putchar('X');
+            print_mouse_info();
             mouse_cycle = 0;
             break;
     }
     isr_end_interrupt(IRQ_BASE + 12);
-    console_clear(COLOR_WHITE, COLOR_BLACK);
-    console_gotoxy(g_mouse_x_pos, g_mouse_y_pos);
-    console_putchar('X');
 }
 
 /**
@@ -194,3 +202,4 @@ void mouse_init() {
     // set mouse handler
     isr_register_interrupt_handler(IRQ_BASE + 12, mouse_handler);
 }
+
