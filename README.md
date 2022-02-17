@@ -47,6 +47,8 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 8] FPU<br/>
 9] Memory Info<br/>
 10] Physical Memory Manager<br/>
-11] ATA read/write<br/>
-12] BIOS 32<br/>
+11] KHeap<br/>
+12] ATA read/write<br/>
+13] BIOS 32<br/>
+14] VGA<br/>
 
