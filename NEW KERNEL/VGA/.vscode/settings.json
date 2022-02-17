@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "io_ports.h": "c",
-        "vga.h": "c",
-        "string.h": "c"
-    }
-}
