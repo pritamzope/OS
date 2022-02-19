@@ -35,5 +35,5 @@ or
 
 ### Graphics:-
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/KHeap/kernel_vbe_graphics.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/VESA%20VBE/kernel_vbe_graphics.png"/>
 
