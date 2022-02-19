@@ -2,6 +2,7 @@
 #include "string.h"
 #include "types.h"
 #include "vga.h"
+#include "keyboard.h"
 
 static uint16 *g_vga_buffer;
 //index for video buffer array
@@ -216,4 +217,37 @@ void printf(const char *format, ...) {
     }
 }
 
+// read string from console, but no backing
+void getstr(char *buffer) {
+    if (!buffer) return;
+    while(1) {
+        char ch = kb_getchar();
+        if (ch == '\n') {
+            printf("\n");
+            return ;
+        } else {
+            *buffer++ = ch;
+            printf("%c", ch);
+        }
+    }
+}
+
+// read string from console, and erase or go back util bound occurs
+void getstr_bound(char *buffer, uint8 bound) {
+    if (!buffer) return;
+    while(1) {
+        char ch = kb_getchar();
+        if (ch == '\n') {
+            printf("\n");
+            return ;
+        } else if(ch == '\b') {
+            console_ungetchar_bound(bound);
+            buffer--;
+            *buffer = '\0';
+        } else {
+            *buffer++ = ch;
+            printf("%c", ch);
+        }
+    }
+}
 

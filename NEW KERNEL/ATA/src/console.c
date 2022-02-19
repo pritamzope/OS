@@ -11,6 +11,8 @@ static uint32 g_vga_index;
 static uint8 cursor_pos_x = 0, cursor_pos_y = 0;
 //fore & back color values
 uint8 g_fore_color = COLOR_WHITE, g_back_color = COLOR_BLACK;
+static uint16 g_temp_pages[MAXIMUM_PAGES][VGA_TOTAL_ITEMS];
+uint32 g_current_temp_page = 0;
 
 // clear video buffer array
 void console_clear(VGA_COLOR_TYPE fore_color, VGA_COLOR_TYPE back_color) {
@@ -35,15 +37,43 @@ void console_init(VGA_COLOR_TYPE fore_color, VGA_COLOR_TYPE back_color) {
     console_clear(fore_color, back_color);
 }
 
+void console_scroll(int type) {
+    uint32 i;
+    if (type == SCROLL_UP) {
+        // scroll up
+        if (g_current_temp_page > 0)
+            g_current_temp_page--;
+        g_current_temp_page %= MAXIMUM_PAGES;
+        for (i = 0; i < VGA_TOTAL_ITEMS; i++) {
+            g_vga_buffer[i] = g_temp_pages[g_current_temp_page][i];
+        }
+    } else {
+        // scroll down
+        g_current_temp_page++;
+        g_current_temp_page %= MAXIMUM_PAGES;
+        for (i = 0; i < VGA_TOTAL_ITEMS; i++) {
+            g_vga_buffer[i] = g_temp_pages[g_current_temp_page][i];
+        }
+    }
+}
+
 /*
 increase vga_index by width of vga width
 */
 static void console_newline() {
+    uint32 i;
+
     if (cursor_pos_y >= VGA_HEIGHT) {
+        for (i = 0; i < VGA_TOTAL_ITEMS; i++)
+            g_temp_pages[g_current_temp_page][i] = g_vga_buffer[i];
+        g_current_temp_page++;
         cursor_pos_x = 0;
         cursor_pos_y = 0;
         console_clear(g_fore_color, g_back_color);
     } else {
+        for (i = 0; i < VGA_TOTAL_ITEMS; i++)
+            g_temp_pages[g_current_temp_page][i] = g_vga_buffer[i];
+        
         g_vga_index += VGA_WIDTH - (g_vga_index % VGA_WIDTH);
         cursor_pos_x = 0;
         ++cursor_pos_y;
@@ -220,4 +250,5 @@ void getstr_bound(char *buffer, uint8 bound) {
         }
     }
 }
+
 

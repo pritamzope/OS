@@ -24,5 +24,10 @@ void console_gotoxy(uint16 x, uint16 y);
 void console_putstr(const char *str);
 void printf(const char *format, ...);
 
-#endif
+// read string from console, but no backing
+void getstr(char *buffer);
 
+// read string from console, and erase or go back util bound occurs
+void getstr_bound(char *buffer, uint8 bound);
+
+#endif

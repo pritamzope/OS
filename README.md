@@ -8,9 +8,6 @@ VGA contains C kernel and assembly program for seeting up Video Graphics Array(V
 Tic-Tac-Toe a simple tic-tac-toe DOS game with boxes, Pong-Game using graphics
 
 
-First read this page before you start: https://wiki.osdev.org/Beginner_Mistakes
-
-
 # Requirements :-
 
 (install following packages using apt-get)<br/>
@@ -51,4 +48,5 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 12] ATA read/write<br/>
 13] BIOS 32<br/>
 14] VGA<br/>
+15] VESA VBE<br/>
 
