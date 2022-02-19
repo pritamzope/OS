@@ -24,13 +24,13 @@ or
 
 ### Mode Info:-
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/KHeap/kernel_vbe_mode_info_1.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/VESA%20VBE/kernel_vbe_mode_info_1.png"/>
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/KHeap/kernel_vbe_mode_info_2.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/VESA%20VBE/kernel_vbe_mode_info_2.png"/>
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/KHeap/kernel_vbe_mode_info_3.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/VESA%20VBE/kernel_vbe_mode_info_3.png"/>
 <br/>
-<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/KHeap/kernel_vbe_mode_info_4.png"/>
+<img src="https://raw.githubusercontent.com/pritamzope/OS/master/NEW%20KERNEL/VESA%20VBE/kernel_vbe_mode_info_4.png"/>
 <br/>
 
 ### Graphics:-
