@@ -45,8 +45,9 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 9] Memory Info<br/>
 10] Physical Memory Manager<br/>
 11] KHeap<br/>
-12] ATA read/write<br/>
-13] BIOS 32<br/>
-14] VGA<br/>
-15] VESA VBE<br/>
+12] Paging<br/>
+13] ATA read/write<br/>
+14] BIOS 32<br/>
+15] VGA<br/>
+16] VESA VBE<br/>
 
