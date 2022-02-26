@@ -34,20 +34,21 @@ Assembly code is replaced with NASM assembly rathen than GNU AS.
 
 ## Order
 
-1] Console<br/>
-2] GDT<br/>
-3] IDT<br/>
-4] Keyboard<br/>
-5] Terminal<br/>
-6] Timer<br/>
-7] Mouse<br/>
-8] FPU<br/>
-9] Memory Info<br/>
-10] Physical Memory Manager<br/>
-11] KHeap<br/>
-12] Paging<br/>
-13] ATA read/write<br/>
-14] BIOS 32<br/>
-15] VGA<br/>
-16] VESA VBE<br/>
+ 1]  Console<br/>
+ 2]  GDT<br/>
+ 3]  IDT<br/>
+ 4]  Keyboard<br/>
+ 5]  Terminal<br/>
+ 6]  Timer<br/>
+ 7]  Mouse<br/>
+ 8]  FPU<br/>
+ 9]  Memory Info<br/>
+10]  Physical Memory Manager<br/>
+11]  KHeap<br/>
+12]  Paging<br/>
+13]  ATA read/write<br/>
+14]  BIOS 32<br/>
+15]  VGA<br/>
+16]  VESA VBE<br/>
+17]  Bitmap Text<br/>
 
