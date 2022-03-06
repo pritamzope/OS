@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-#define BITMAP_SIZE 16
+#define BITMAP_SIZE 20
 
 void bitmap_draw_char(char ch, int x, int y, int color);
 
