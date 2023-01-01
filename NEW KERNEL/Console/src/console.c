@@ -36,7 +36,7 @@ void console_init(VGA_COLOR_TYPE fore_color, VGA_COLOR_TYPE back_color) {
     console_clear(fore_color, back_color);
 }
 
-void console_scroll(int type) {
+void console_scroll() {
     uint16_t blank = 0x20 | ((g_fore_color | g_back_color << 4) << 8);
     
     if (cursor_pos_y >= VGA_HEIGHT) {
@@ -79,6 +79,10 @@ static void console_newline() {
 
 //assign ascii character to video buffer
 void console_putchar(char ch) {
+    
+    // Scroll terminal
+    console_scroll();
+    
     if (ch == ' ') {
         g_vga_buffer[g_vga_index++] = vga_item_entry(' ', g_fore_color, g_back_color);
         vga_set_cursor_pos(cursor_pos_x++, cursor_pos_y);
