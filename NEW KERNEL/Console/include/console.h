@@ -12,7 +12,7 @@ void console_clear(VGA_COLOR_TYPE fore_color, VGA_COLOR_TYPE back_color);
 
 //initialize console
 void console_init(VGA_COLOR_TYPE fore_color, VGA_COLOR_TYPE back_color);
-void console_scroll(int line_count);
+void console_scroll();
 void console_putchar(char ch);
 // revert back the printed character and add 0 to it
 void console_ungetchar();
