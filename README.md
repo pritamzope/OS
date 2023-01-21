@@ -13,16 +13,18 @@ Tic-Tac-Toe a simple tic-tac-toe DOS game with boxes, Pong-Game using graphics
 (install following packages using apt-get)<br/>
 1) GNU/Linux :-  Any distribution<br/>
 2) make :- make utility<br/>
-3) Assembler :-  NASM Assembler(nasm)<br/>
+3) Nasm :-  NASM Assembler(nasm)<br/>
 4) GCC :-  GNU Compiler Collection, C compiler<br/>
 5) xorriso :-  A package that creates, loads, manipulates ISO 9660 filesystem images.(man xorriso)<br/>
-6) grub-mkrescue :- utility to make ISO image<br/>
-7) QEMU :-  Quick EMUlator to boot our kernel<br/>
-8) VirtualBox :- A full graphical virtual environment
+6) grub-pc-bin: GRUB binaries and modules<br/>
+7) mtools: utilities to access DOS disks in Unix<br/>
+8) grub-mkrescue :- utility to make ISO image<br/>
+9) QEMU :-  Quick EMUlator to boot our kernel<br/>
+10) VirtualBox :- A full graphical virtual environment
 
 
 ```
-$ sudo apt-get install make nasm gcc xorriso qemu qemu-system-x86 qemu-system-i386 virtualbox
+$ sudo apt-get install make nasm gcc grub-pc-bin mtools xorriso qemu qemu-system virtualbox
 ```
 
 
