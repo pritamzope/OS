@@ -98,6 +98,7 @@ void kmain(unsigned long magic, unsigned long addr) {
         printf("Max blocks: %d\n", pmm_get_max_blocks());
         // initialize a region of memory of size (4096 * 10), 10 blocks memory
         pmm_init_region(g_kmap.available.start_addr, PMM_BLOCK_SIZE * 10);
+        printf("PMM init\n");
 
         printf("Initializing paging...\n");
         paging_init();
@@ -115,6 +116,7 @@ void kmain(unsigned long magic, unsigned long addr) {
         x[0] = 12345;
 
         pmm_deinit_region(g_kmap.available.start_addr, PMM_BLOCK_SIZE * 10);
+        printf("PMM Deinit\n");
     } else {
         printf("error: invalid multiboot magic number\n");
     }
