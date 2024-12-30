@@ -1,39 +1,5 @@
 section .text
     extern isr_exception_handler
-    global exception_0
-    global exception_1
-    global exception_2
-    global exception_3
-    global exception_4
-    global exception_5
-    global exception_6
-    global exception_7
-    global exception_8
-    global exception_9
-    global exception_10
-    global exception_11
-    global exception_12
-    global exception_13
-    global exception_14
-    global exception_15
-    global exception_16
-    global exception_17
-    global exception_18
-    global exception_19
-    global exception_20
-    global exception_21
-    global exception_22
-    global exception_23
-    global exception_24
-    global exception_25
-    global exception_26
-    global exception_27
-    global exception_28
-    global exception_29
-    global exception_30
-    global exception_31
-    global exception_128
-
 
 exception_handler:
     pusha                 ; push all registers
@@ -61,196 +27,52 @@ exception_handler:
     iret
 
 
-exception_0:
-    cli
-    push byte 0     ; store default err code(0)
-    push 0          ; push exception number index in IDT
+; Macro for interrupt service routines that do push an error code
+%macro ISR_ERRCODE 1
+global exception_%1
+exception_%1:
+    ; We don't need to push a byte, the CPU did it for us
+    push %1
     jmp exception_handler
+%endmacro
 
-exception_1:
-    cli
-    push byte 0     ; store default err code(0)
-    push 1          ; push exception number index in IDT
+; Macro for interrupt service routines that don't push an error code
+%macro ISR_NOERRCODE 1
+global exception_%1
+exception_%1:
+    ; There is no error code
+    push byte 0         ; Push a default error code as REGISTERS expects it
+    push %1             ; Push the exception index
     jmp exception_handler
-
-exception_2:
-    cli
-    push byte 0     ; store default err code(0)
-    push 2          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_3:
-    cli
-    push byte 0     ; store default err code(0)
-    push 3          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_4:
-    cli
-    push byte 0     ; store default err code(0)
-    push 4          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_5:
-    cli
-    push byte 0     ; store default err code(0)
-    push 5          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_6:
-    cli
-    push byte 0     ; store default err code(0)
-    push 6          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_7:
-    cli
-    push byte 0     ; store default err code(0)
-    push 7          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_8:
-    cli
-    push 8          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_9:
-    cli
-    push byte 0     ; store default err code(0)
-    push 9          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_10:
-    cli
-    push 10          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_11:
-    cli
-    push 11          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_12:
-    cli
-    push 12          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_13:
-    cli
-    push 13          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_14:
-    cli
-    push 14          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_15:
-    cli
-    push byte 0     ; store default err code(0)
-    push 15          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_16:
-    cli
-    push byte 0     ; store default err code(0)
-    push 16          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_17:
-    cli
-    push byte 0     ; store default err code(0)
-    push 17          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_18:
-    cli
-    push byte 0     ; store default err code(0)
-    push 18          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_19:
-    cli
-    push byte 0     ; store default err code(0)
-    push 19          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_20:
-    cli
-    push byte 0     ; store default err code(0)
-    push 20          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_21:
-    cli
-    push byte 0     ; store default err code(0)
-    push 21          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_22:
-    cli
-    push byte 0     ; store default err code(0)
-    push 22          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_23:
-    cli
-    push byte 0     ; store default err code(0)
-    push 23          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_24:
-    cli
-    push byte 0     ; store default err code(0)
-    push 24          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_25:
-    cli
-    push byte 0     ; store default err code(0)
-    push 25          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_26:
-    cli
-    push byte 0     ; store default err code(0)
-    push 26          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_27:
-    cli
-    push byte 0     ; store default err code(0)
-    push 27          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_28:
-    cli
-    push byte 0     ; store default err code(0)
-    push 28          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_29:
-    cli
-    push byte 0     ; store default err code(0)
-    push 29          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_30:
-    cli
-    push byte 0     ; store default err code(0)
-    push 30          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_31:
-    cli
-    push byte 0     ; store default err code(0)
-    push 31          ; push exception number index in IDT
-    jmp exception_handler
-
-exception_128:
-    cli
-    push byte 0     ; store default err code(0)
-    push 128          ; push exception number index in IDT
-    jmp exception_handler
+%endmacro
 
 
+ISR_NOERRCODE   0       ; Divison by zero exception
+ISR_NOERRCODE   1       ; Debug exception
+ISR_NOERRCODE   2       ; Non-maskable interrupt
+ISR_NOERRCODE   3       ; INT3 breakpoint
+ISR_NOERRCODE   4       ; Overflow exception
+ISR_NOERRCODE   5       ; Bound exception
+ISR_NOERRCODE   6       ; Invalid opcode
+ISR_NOERRCODE   7       ; No FPU
+ISR_ERRCODE     8       ; Double fault
+ISR_NOERRCODE   9       ; Coprocessor segment overrun (reserved now)
+ISR_ERRCODE     10      ; Invalid TSS
+ISR_ERRCODE     11      ; Segment not present
+ISR_ERRCODE     12      ; Stack segment exception
+ISR_ERRCODE     13      ; General protection fault
+ISR_ERRCODE     14      ; Page fault
+ISR_NOERRCODE   15      ; Reserved exception
+ISR_NOERRCODE   16      ; Floating-point exception
+ISR_ERRCODE     17      ; Alignment check
+ISR_NOERRCODE   18      ; Machine check
+ISR_NOERRCODE   19      ; SIMD floating-point exception
+ISR_NOERRCODE   20      ; Virtualization exception
+ISR_ERRCODE     21      ; Control-protection exception
+; 22 - 27 are reserved
+ISR_NOERRCODE   28      ; Hypervisor injection exception
+ISR_ERRCODE     29      ; VMM communication exception
+ISR_ERRCODE     30      ; Security exception
+ISR_NOERRCODE   31      ; Reserved
+
+ISR_NOERRCODE   128     ; System call

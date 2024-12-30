@@ -49,12 +49,6 @@ void idt_init() {
     idt_set_entry(19, (uint32)exception_19, 0x08, 0x8E);
     idt_set_entry(20, (uint32)exception_20, 0x08, 0x8E);
     idt_set_entry(21, (uint32)exception_21, 0x08, 0x8E);
-    idt_set_entry(22, (uint32)exception_22, 0x08, 0x8E);
-    idt_set_entry(23, (uint32)exception_23, 0x08, 0x8E);
-    idt_set_entry(24, (uint32)exception_24, 0x08, 0x8E);
-    idt_set_entry(25, (uint32)exception_25, 0x08, 0x8E);
-    idt_set_entry(26, (uint32)exception_26, 0x08, 0x8E);
-    idt_set_entry(27, (uint32)exception_27, 0x08, 0x8E);
     idt_set_entry(28, (uint32)exception_28, 0x08, 0x8E);
     idt_set_entry(29, (uint32)exception_29, 0x08, 0x8E);
     idt_set_entry(30, (uint32)exception_30, 0x08, 0x8E);
